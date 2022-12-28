@@ -52,7 +52,7 @@ class Upload extends Component {
 
     const UID= Math.round(1+ Math.random() * (1000000-1));
 
-    var date={
+    var date = {
         fileExt:"png",
         imageID: UID,
         folder:UID,
@@ -61,7 +61,7 @@ class Upload extends Component {
 
     this.setState({confirmation : "Processing..."})
     await fetch(
-        'https://31gv9av7oe.execute-api.us-west-1.amazonaws.com/Production',
+        'https://zyja0j79z6.execute-api.us-east-1.amazonaws.com/Production',
         {
         method: "POST",
         headers: {
@@ -72,11 +72,9 @@ class Upload extends Component {
         }
     );
 
-
-
     let targetImage= UID + ".png";
     const response=await fetch(
-        'https://31gv9av7oe.execute-api.us-west-1.amazonaws.com/Production/ocr',
+        'https://zyja0j79z6.execute-api.us-east-1.amazonaws.com/Production/OCR',
         {
         method: "POST",
         headers: {
